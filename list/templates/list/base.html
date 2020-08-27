@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="discover.gif" width="30" height="100" alt="discover rogo">
+        </a>
+    </nav>
+    {% block contains %}
+    {% endblock %}
+</body>
