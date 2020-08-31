@@ -6,7 +6,7 @@
     <ol class= "breadcrumb">
         <li class="breadcrumb-item"><a href="#">トップ</a></li>
         <li class="breadcrumb-item"><a href="#">本を探す</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="#">書籍一覧</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'list:index'%}">書籍一覧</a></li>
     </ol>
 </nav>
 </div><br><br>
@@ -14,18 +14,18 @@
 <title>書籍一覧</title>
 <div class="container">
   <div class="d-flex align-items-center justify-content-center">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="キーワードで探す">
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-default">ボタン</button>
-        </span>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="キーワードで探す" aria-label="キーワードで探す" aria-describedby="button-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" type="button" id="button-addon1">検索</button>
+        </div>
     </div>
   </div>
 </div><br><br>
+<h3><div class="text-center">カテゴリで探す</div></h3>
 <div class="container">
   <div class="d-flex align-items-center justify-content-center">
     <p>
-    カテゴリで探す<br>
       <a class="btn btn-light" href="#" role="button">ビジネス書</a>
       <a class="btn btn-light" href="#" role="button">自己啓発書</a>
       <a class="btn btn-light" href="#" role="button">社会・時事</a>
@@ -38,11 +38,11 @@
     </p>
   </div>
 </div>
-
+<h3><div class="text-center">話題のキーワード</div></h3>
 <div class="container">
   <div class="d-flex align-items-center justify-content-center">
+    
     <p>
-    話題のキーワード<br>
       <a class="btn btn-light" href="#" role="button">いま話題の本</a>
       <a class="btn btn-light" href="#" role="button">ロングセラー</a>
       <a class="btn btn-light" href="#" role="button">天才ドリルシリーズ</a>
@@ -56,301 +56,435 @@
     <div class="mx-auto test-box">　　　　　全件　n　件(DBから引っ張ってくる)</div>
 </div><br>
 
-<div class="card-group">
+<div class="card-deck">
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center">
+        <h6 class="card-title">100点のほめ方</h6>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center">
+        <a class="btn btn-secondary btn-sm" href="" role="button">新刊</a>
+        <a class="btn btn-secondary btn-sm" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary" href="" role="button">新刊</a>
+        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+</div>
+
+<div class="card-deck">
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
-        <a class="btn btn-secondary" href="" role="button">新刊</a>
-        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
-      </div>
-　　</div>
-</div><br>
-
-<div class="card-group">
-  <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
-        <h5 class="card-title">100点のほめ方</h5>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
-      </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary" href="" role="button">新刊</a>
+        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+</div>
+
+<div class="card-deck">
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
-        <a class="btn btn-secondary" href="" role="button">新刊</a>
-        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
-      </div>
-　　</div>
-</div><br>
-
-<div class="card-group">
-  <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
-        <h5 class="card-title">100点のほめ方</h5>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
-      </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary" href="" role="button">新刊</a>
+        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+</div>
+
+<div class="card-deck">
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary btn-sm" href="" role="button">新刊</a>
+        <a class="btn btn-secondary btn-sm" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
-        <a class="btn btn-secondary" href="" role="button">新刊</a>
-        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
-      </div>
-　　</div>
-</div><br>
-
-<div class="card-group">
-  <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
-        <h5 class="card-title">100点のほめ方</h5>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
-      </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary" href="" role="button">新刊</a>
+        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+</div>
+
+<div class="card-deck">
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
 
   <div class="card" style="width: 12rem;">
-      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
-      <div class="card-body">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
         <h5 class="card-title">100点のほめ方</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">著者｜原邦雄</li>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center card-footer">
         <a class="btn btn-secondary" href="" role="button">新刊</a>
         <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
       </div>
 　　</div>
-</div><br>
+
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary" href="" role="button">新刊</a>
+        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+
+  <div class="card" style="width: 12rem;">
+    <a href="{% url 'list:detail'%}">
+      <img class="bd-placeholder-img card-img-top" src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" max-width="50" width="auto" max-heigth="50" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="100%" y="100%" fill="#dee2e6" dy=".2em"></text>
+    </a> 
+      <div class="card-body text-center card-footer">
+        <h5 class="card-title">100点のほめ方</h5>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item text-center">著者｜原邦雄</li>
+      </ul>
+      <div class="card-body text-center card-footer">
+        <a class="btn btn-secondary" href="" role="button">新刊</a>
+        <a class="btn btn-secondary" href="" role="button">ビジネス書</a>
+      </div>
+　　</div>
+</div>
 
 <div class="container">
   <div class="d-flex align-items-center justify-content-center">
     <nav aria-label="ページ送り">
       <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">1関数化できそう</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
