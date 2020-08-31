@@ -1,0 +1,67 @@
+{% extends "list/base.html" %}
+{% block contains %}
+{% load static %}
+
+<div class="container">
+　<nav aria-label="breadcrumb">
+    <ol class= "breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'list:index'%}">トップ</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'list:index'%}">本を探す</a></li>
+      <li class="breadcrumb-item" aria-current="page"><a href="{% url 'list:index'%}">書籍一覧</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'list:detail'%}">詳細</a></li>
+    </ol>
+  </nav>
+</div><br><br>
+
+<div class="container">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="https://dma-storage.s3-ap-northeast-1.amazonaws.com/images/contents/9784799326664.jpg" class="card-img" alt="商品画像">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h1 class="card-title">100点のほめ方</h1><br><br>
+                        <h4 class="card-text">著｜原邦雄</h4><br>
+                        <a class="btn btn-secondary" href="" role="button">新刊</a>
+                        <a class="btn btn-secondary" href="" role="button">ビジネス書</a><br><br><br>
+                        <h4 class="card-text">1500円(税抜)</h4><br><br>
+                    </div>
+                    <div class="card-footer">
+                        <h4>ページ数:268ページ　　　　　　　発売日:2020/8/28</h4>
+                        <h4>ISBN:978-4-7993-2666-4</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#detail1" class="nav-link active" data-toggle="tab">商品説明</a>
+        </li>
+        <li class="nav-item">
+            <a href="#detail2" class="nav-link" data-toggle="tab">目次</a>
+        </li>
+        <li class="nav-item">
+            <a href="#detail3" class="nav-link" data-toggle="tab">著者情報</a>
+        </li> 
+    </ul>
+
+    <div class="tab-content">
+        <div id="detail1" class="tab-pane active">
+            <h1>hogehoge</h1>
+        </div>
+        <div id="detail2" class="tab-pane">
+            <h1>fugafuga</h1>
+        </div>
+        <div id="detail3" class="tab-pane">
+            <h1>piyopiyo</h1>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
