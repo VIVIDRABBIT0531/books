@@ -6,3 +6,8 @@ def index(request):
     template = loader.get_template('list/index.html')
     context = {}
     return HttpResponse(template.render(context, request))
+
+def detail(request):
+    template = loader.get_template('list/detail.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
